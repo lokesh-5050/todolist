@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="../stylesheets/style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"></script>
+</head>
+<body>
+  <div style="position: absolute;top: 50%;left: 50%;transform:translate(-50%,-50%) ;" class="card">
+
+    <% obj.forEach(function(elem){%>
+      <div style="display: flex;justify-content: space-between;margin-bottom: 1vw;" class="line">
+        <div class="checkbox">
+          <input class="box" type="checkbox" name="" id="">           
+        </div>
+        <h4><%=elem.taskname%>
+       
+        <h5><%= new Date().getMinutes();%> </h5>
+
+         </h4>
+        <h5><%=elem.username%> </h5>
+        
+      </div>
+    <%}) %> 
+    
+    <form style="position: absolute; bottom: 0%;" action="/create" method="post">
+      <input type="text" name="taskname" placeholder="taskname" id="">
+      <input type="text" name="username" placeholder="username">
+      <button>submit</button>
+
+    </form>
+  </div>
+  <script>
+    // document.querySelector(".card").addEventListener('click', (dets)=>{
+    //   // // console.log(dets.target.className == "box")
+    //   // if(dets.target.className == "box"){
+    //   //   dets.target.parentElement.parentElement.style.backgroundColor = "green"
+    //   // }
+    
+    // })
+
+      const line = document.getElementsByClassName("line")
+
+    document.querySelector(".box").addEventListener("click", (dets)=>{
+      if(line.style.backgroundColor == "palevioletred"){
+        line.style.backgroundColor = "green"
+      }
+    })
+
+
+    
+
+
+
+  </script>
+
+</body>
+</html>
